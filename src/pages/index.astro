@@ -1,43 +1,52 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+import SectionContainer from '../components/SectionContainer.astro';
+import Experience from '../components/Experience.astro';
+
+import Bag from '../components/icons/bag.astro';
+import Code from '../components/icons/code.astro';
+import TechIcon from '../components/icons/techIcon.astro';
+import Aboutme from '../components/icons/about.astro';
+import Projects from '../components/Projects.astro';
+import Tech from '../components/Tech.astro';
+import About from '../components/About.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <Layout title="Portafolio de Anabel Huanca Moreano">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	
-	<main>
-		<section class="w-full mx-auto lg:w-[740px] py-44">
-			<img class="rounded-full w-12 h-12 mb-7" src="https://i.pinimg.com/564x/9a/d9/8d/9ad98d6a34fcc1cc9fe2553813303db3.jpg" alt="foto">
-		<h1 class="text-white text-5xl font-semibold justify-center flex-row gap-x-4 pb-4">Hola mundo! Soy Anabel Huanca Moreano</h1>
+	<main class="px-4">
+		<SectionContainer class="py-16 pb-24 md:py-36">
+			<Hero/>
+		</SectionContainer>
 		
-		<h2 class="text-2xl opacity-80">Desarrolladora Front-end y entusiasta del diseño UI/UX. 
-			<span>De Lima, Perú.</span>
-		</h2>
+		<SectionContainer id="experiencia">
+			<h2 class="text-2xl font-bold mb-8 flex gap-x-3 items-center">
+				<Bag class="size-7"/>
+				Experiencia laboral</h2>
+			<Experience/>
+		</SectionContainer>
 
-			<ul>
-				<li>
-					<a href="https://www.linkedin.com/in/anabelhuancam/" target="_blank">
-						<linkedInIcon class="size-4 md:size-6" />
-						<i class="fa-brands fa-linkedin"></i>
-						LinkedIn</a>
-				</li>
-			</ul>
-			<ul>
-				<li>
-					<a href="https://github.com/AnabelHuancaM" target="_blank">
-						<i class="fa-brands fa-github"></i>
-						GitHub</a>
-				</li>
-			</ul>
-			<ul>
-				<li>
-					<a href="mailto:anabel.humor@gmail.com" target="_blank">
-						<i class="fa-regular fa-envelope"></i>
-						anabel.humor@gmail.com</a>
-				</li>
-			</ul>
-		</section>
+	<SectionContainer>
+		<h2 class="text-2xl font-bold mb-8 flex gap-x-3 items-center">
+			<Code class="size-7"/>
+			Proyectos</h2>
+			<Projects/>
+	</SectionContainer>
+
+	<SectionContainer>
+		<h2 class="text-2xl font-bold mb-8 flex gap-x-3 items-center">
+			<Aboutme class="size-7"/>
+			Sobre mi</h2>
+			<About/>	
+	</SectionContainer>
+
+	<SectionContainer>
+		<h2 class="text-2xl font-bold mb-8 flex gap-x-3 items-center">
+			<TechIcon class="size-6"/>
+			Tecnologías</h2>
+			<Tech/>
+	</SectionContainer>
 	</main>
 </Layout>

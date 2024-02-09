@@ -1,0 +1,46 @@
+---
+//1:30:05
+/* const tags = {
+    name: "HTML",
+    class: "bg-orange text-white",
+    icon: "",
+};
+
+const PROJECTS = [
+    {
+        title: "MyTravel",
+        description: "Proyecto web sobre una agencia de viajes.",
+        link: "https://mytravel-web.netlify.app/",
+        github: "#",
+        image: "/projects/myTravel.webp",
+        tags: ["HTML", "CSS", "Bootstrap"],
+    },
+];
+---
+
+{
+    //llamando a los props?
+    PROJECTS.map(({ title, description, image, tags }) => (
+        <article class="">
+            <div class="flex">
+                <h3 class="text-2xl font-bold mb-3">{title}</h3>
+                <p class="text-lg mb-4 text-pretty">{description}</p>
+                <ul class="flex flex-row mb-2 gap-x-2">
+                    {tags.map((tag) => (
+                        <li>{tag}</li>
+                    ))}
+                </ul>
+                <img
+                    class="object-cover object-top 
+                w-full h-56 transition duration-500 
+                sm:h-full md:scale-110 md:group-hover:scale-105"
+                    loading="lazy"
+                    src={image}
+                    src={image}
+                    alt={`captura del proyecto ${image}`}
+                />
+            </div>
+        </article>
+    ))
+}
+ */

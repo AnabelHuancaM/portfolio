@@ -1,0 +1,30 @@
+---
+import MailIcon from "../components/icons/email.astro";
+import LinkedinIcon from "../components/icons/linkedin.astro";
+import SocialBtn from "../components/SocialBtn.astro";
+---
+<div class="">
+    <img class="rounded-full size-12 mb-7" src="https://i.pinimg.com/564x/9a/d9/8d/9ad98d6a34fcc1cc9fe2553813303db3.jpg" alt="foto">
+    
+    <h1 class="text-gray-800 text-2xl md:text-4xl lg:text-5xl 
+    font-semibold justify-center flex-row gap-x-4 
+    pb-6 lg:pb-5 dark:text-white">
+        Hola mundo! Soy Anabel Huanca Moreano</h1>
+    
+    <h2 class="text-xl text-wrap opacity-80 max-w-[700px]">Desarrolladora Front-end y entusiasta del diseño UI/UX. 
+        <span>De Lima, Perú.</span> 
+        Especializada en el desarrollo de aplicaciones web únicas.
+    </h2>
+
+    <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialBtn href="https://www.linkedin.com/in/anabelhuancam/" >
+            <LinkedinIcon class="size-4 md:size-6" />
+            LinkedIn
+            </SocialBtn>
+
+        <SocialBtn href="mailto:anabel.humor@gmail.com" >
+            <MailIcon class="size-4  md:size-6" />
+            Contáctame
+            </SocialBtn>
+    </nav>
+</div>

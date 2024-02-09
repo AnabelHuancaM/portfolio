@@ -1,0 +1,23 @@
+---
+import  ExperienceItem from "./ExperienceItem.astro";
+const experience = [
+  {
+    date: "Octubre 2023 - Enero 2024",
+    title: "Practicante Pre Profesional Diseño UX / UI",
+    description:
+    "He mejorado la usabilidad y la experiencia del usuario optimizando las interfaces previas. Para ello, diseñé wireframes y prototipos interactivos de aplicaciones móviles, implementando mejoras en comparación con las versiones anteriores. Estas mejoras se centran en aspectos como la navegación intuitiva, la claridad en la presentación de la información y la coherencia en el diseño visual."
+  },
+]
+
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+    {
+      experience.map((experiencie) => (
+        <li class="mb-10 ms-4">
+          <ExperienceItem {...experiencie} />
+        </li>
+      ))
+    }
+  </ol>
+

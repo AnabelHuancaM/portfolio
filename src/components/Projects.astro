@@ -3,12 +3,47 @@ import SocialBtn from "./SocialBtn.astro";
 import React from "./icons/react.astro";
 import GithubIcon from "../components/icons/github.astro";
 import LinkIcon from "../components/icons/link.astro";
+import Html from "./icons/html.astro";
+import Css from "./icons/css.astro";
+import Tailwind from "./icons/tailwind.astro";
+import Vite from "./icons/vite.astro";
 
 const TAGS = {
+    HTML: {
+        name: "HTML",
+        class: "bg-orange text-white",
+        icon: Html,
+    },
+
+    CSS: {
+        name: "CSS",
+        class: "bg-blue/500 text-white",
+        icon: Css,
+    },
+
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: Tailwind,
+    },
+
+    BOOTSTRAP: {
+        name: "Bootstrap",
+        class: "bg-purple text-white",
+        icon: React,
+    },
+
+
     REACT: {
         name: "React.js",
         class: "bg-blue text-white",
         icon: React,
+    },
+
+    VITE: {
+        name: "Vite.js",
+        class: "bg-purple text-white",
+        icon: Vite,
     },
 };
 
@@ -19,16 +54,16 @@ const PROJECTS = [
         link: "https://mytravel-web.netlify.app/",
         github: "#",
         image: "/projects/myTravel.webp",
-        tags: ["HTML", "CSS", "Bootstrap"],
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.BOOTSTRAP],
     },
 
     {
         title: "PowerGym",
-        description: "Proyecto web sobre una agencia de viajes.",
-        link: "https://mytravel-web.netlify.app/",
+        description: "Landing page de un sitio web de un gimnasio.",
+        link: "https://anabelhuancam.github.io/PowerGym/",
         github: "#",
-        image: "/projects/myTravel.webp",
-        tags: ["HTML", "CSS", "Bootstrap"],
+        image: "/projects/powerGym.png",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.BOOTSTRAP],
     },
 ];
 ---
@@ -41,7 +76,7 @@ const PROJECTS = [
                 <div class="w-full md:w-1/2">
                     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
                         <img
-                            src="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                            class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
                             loading="lazy"
                             src={image}
                         />
@@ -57,7 +92,10 @@ const PROJECTS = [
                         <ul class="flex flex-row mb-2 gap-x-2">
                             {tags.map((tag) => (
                                 <li>
-
+                                    <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `} >
+                                        <tag.icon class="size-4" />
+                                        {tag.name}
+                                    </span>
                                 </li>
                             ))}
                         </ul>

@@ -7,17 +7,18 @@ import Html from "./icons/html.astro";
 import Css from "./icons/css.astro";
 import Tailwind from "./icons/tailwind.astro";
 import Vite from "./icons/vite.astro";
+import Bootstrap from "./icons/bootstrap.astro";
 
 const TAGS = {
     HTML: {
         name: "HTML",
-        class: "bg-orange text-white",
+        class: "bg-[#7A442D] text-white",
         icon: Html,
     },
 
     CSS: {
         name: "CSS",
-        class: "bg-blue/500 text-white",
+        class: "bg-[#1B779F] text-white",
         icon: Css,
     },
 
@@ -29,20 +30,20 @@ const TAGS = {
 
     BOOTSTRAP: {
         name: "Bootstrap",
-        class: "bg-purple text-white",
-        icon: React,
+        class: "bg-[#3F0D77] text-white",
+        icon: Bootstrap,
     },
 
 
     REACT: {
         name: "React.js",
-        class: "bg-blue text-white",
+        class: "bg-[#1A7181] text-white",
         icon: React,
     },
 
     VITE: {
         name: "Vite.js",
-        class: "bg-purple text-white",
+        class: "bg-gradient-to-r from-purple-700 to-blue-500 text-white",
         icon: Vite,
     },
 };
@@ -63,7 +64,7 @@ const PROJECTS = [
         link: "https://anabelhuancam.github.io/PowerGym/",
         github: "#",
         image: "/projects/powerGym.png",
-        tags: [TAGS.HTML, TAGS.CSS, TAGS.BOOTSTRAP],
+        tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.VITE, TAGS.REACT],
     },
 ];
 ---

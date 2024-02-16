@@ -18,7 +18,6 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		
 		<Header/>
 		<slot />
 		<Footer/>
@@ -27,21 +26,17 @@ const { title } = Astro.props;
 <style is:global>
  	:root {
 		color-scheme: light dark;
-		/* background: #00091D; */
 		--primary: #4154f1;
 		--secondary: #6E6D8F;
-		--tw-bg-opacity: 1
 	}
 
 	*{
 		box-sizing: border-box;
-		/* overflow: hidden; */
 	}
 	html {
   	font-family: 'Poppins', sans-serif;
 	scroll-behavior: smooth;
-	background: linear-gradient( 90deg,
-    #232547 0%,
+	background: linear-gradient( 90deg, #232547 0%,
     #0a1131 100%
   );
 	}
@@ -59,6 +54,7 @@ const { title } = Astro.props;
 	span{
 		color: #6B7BFF;
 	}
+
 
 	@media (prefers-reduce-motion: reduce) {
 		html{

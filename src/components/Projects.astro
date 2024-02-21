@@ -8,6 +8,7 @@ import Css from "./icons/css.astro";
 import Tailwind from "./icons/tailwind.astro";
 import Vite from "./icons/vite.astro";
 import Bootstrap from "./icons/bootstrap.astro";
+import Astroicon from "./icons/astroicon.astro";
 
 const TAGS = {
     HTML: {
@@ -35,6 +36,12 @@ const TAGS = {
     },
 
 
+    ASTRO: {
+        name: "Astro.js",
+        class: "bg-gradient-to-r from-purple-700 to-pink-300 text-white",
+        icon: Astroicon,
+    },
+
     REACT: {
         name: "React.js",
         class: "bg-[#1A7181] text-white",
@@ -59,71 +66,70 @@ const PROJECTS = [
     },
 
     {
-        title: "PowerGym",
-        description: "Landing page de un sitio web de un gimnasio.",
-        link: "https://anabelhuancam.github.io/PowerGym/",
-        github: "#",
-        image: "/projects/powerGym.png",
-        tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.VITE, TAGS.REACT],
+        title: "Yumhub",
+        description: "Landing page de un restaurante de pizzas.",
+        link: "#",
+        github: "https://github.com/AnabelHuancaM/yumHub",
+        image: "/projects/yumhub.png",
+        tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.ASTRO],
     },
 ];
 ---
 
 <div class="flex flex-col gap-y-16">
     {
-        //llamando a los props
-        PROJECTS.map(({ title, description, image, tags, link, github }) => (
-            <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-                <div class="w-full md:w-1/2">
-                    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-                        <img
-                            class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-                            loading="lazy"
-                            src={image}
-                        />
-                    </div>
+    //llamando a los props
+    PROJECTS.map(({ title, description, image, tags, link, github }) => (
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+            <div class="w-full md:w-1/2">
+                <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                    <img
+                        class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                        loading="lazy" src={image}/>
                 </div>
+            </div>
 
-                <div class="w-full md:w-1/2 md:max-w-lg">
-                    <h3 class="text-xl font-bold text-gray-700 dark:text-gray-100">
-                        {title}
-                    </h3>
+            <div class="w-full md:w-1/2 md:max-w-lg">
+                <h3 class="text-xl font-bold text-gray-700 dark:text-gray-100">
+                    {title}
+                </h3>
+                
+                <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
 
-                    <div class="flex flex-wrap mt-2">
-                        <ul class="flex flex-row mb-2 gap-x-2">
-                            {tags.map((tag) => (
-                                <li>
-                                    <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `} >
-                                        <tag.icon class="size-4" />
-                                        {tag.name}
-                                    </span>
-                                </li>
-                            ))}
-                        </ul>
+                <div class="flex flex-wrap mt-2">
+                    <ul class="flex flex-row mb-2 gap-x-2">
+                        {tags.map((tag) => (
+                            <li>
+                                <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `} >
+                                    <tag.icon class="size-4" />
+                                    {tag.name}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                    
+                <div class="flex items-end justify-start mt-4 gap-x-4">
+                    {
+                        github && (
+                        <SocialBtn href={github}>
+                            <GithubIcon class="size-6"/>
+                            Code
+                        </SocialBtn>
+                        )}
 
-                    <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-                        <div class="flex items-end justify-start mt-4 gap-x-4">
-                            {
-                                github && (
-                                <SocialBtn href={github}>
-                                    <GithubIcon class="size-6"/>
-                                    Code
-                                </SocialBtn>
-                                )}
-
-                            {
-                                link && (
-                                    <SocialBtn href={link}>
-                                        <LinkIcon class="size-6"/>
-                                        Preview
-                                    </SocialBtn>
-                                )
-                            }
-                        </div>
-                        
-                    </div>
+                    {
+                        link && (
+                            <SocialBtn href={link}>
+                                <LinkIcon class="size-6"/>
+                                Preview
+                            </SocialBtn>
+                        )
+                    }
                 </div>
-            </article>
-        ))
+                    
+                </div>
+            </div>
+        </article>
+    ))
     }
 </div>

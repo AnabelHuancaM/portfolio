@@ -13,7 +13,7 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="author" content="anabelHumor">
-		<meta name="description" content="Portfolio" />
+		<meta name="description" content="Portfolio de anabelhumor" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content="Portafolio de Anabel Huanca Moreano - anabelhumor">
 		<link rel="icon" type="image/svg+xml" href="perfil.jpg" />
@@ -35,12 +35,12 @@ const { title } = Astro.props;
 	*{
 		box-sizing: border-box;
 	}
+
 	html {
   	font-family: 'Poppins', sans-serif;
 	scroll-behavior: smooth;
-	background: linear-gradient( 90deg, #232547 0%,
-    #0a1131 100%
-  );
+	background: linear-gradient( 90deg, #19376DB2 0%,
+    #04152D 100%);
 	}
 	
 	body{
@@ -53,12 +53,13 @@ const { title } = Astro.props;
 		color: var(--primary);
 	}
 	
-	span{
-		color: #6B7BFF;
-	}
-
 	strong{
 		color: var(--primary);
+	}
+
+	.time{
+		color: var(--secondary);
+		font-weight: bold;
 	}
 
 	@media (prefers-reduce-motion: reduce) {

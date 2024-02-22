@@ -1,6 +1,7 @@
 ---
 import MailIcon from "../components/icons/email.astro";
 import LinkedinIcon from "../components/icons/linkedin.astro";
+import CvIcon from "../components/icons/cv.astro";
 import SocialBtn from "../components/SocialBtn.astro";
 ---
 <div class="">
@@ -11,11 +12,11 @@ import SocialBtn from "../components/SocialBtn.astro";
     pb-6 lg:pb-5 dark:text-white">
         Hola mundo! Soy Anabel Huanca Moreano</h1>
     
-    <h2 class="text-xl text-wrap opacity-80 max-w-[700px]"> <strong> Desarrolladora Front-end </strong>y entusiasta del diseño UI/UX. 
+    <h2 class="text-xl text-wrap opacity-80 max-w-[700px]"> <strong> Desarrolladora Front-end </strong>y entusiasta del <strong> diseño UI/UX.</strong>
         Especializada en el desarrollo de aplicaciones web únicas con enfoque centrado en la experiencia del usuario.
     </h2>
 
-    <nav class="flex gap-4 mt-8 flex-wrap">
+    <nav class="flex gap-3 mt-8 flex-wrap">
         <SocialBtn href="https://www.linkedin.com/in/anabelhuancam/" >
             <LinkedinIcon class="size-4 md:size-6" />
             LinkedIn
@@ -24,6 +25,11 @@ import SocialBtn from "../components/SocialBtn.astro";
         <SocialBtn href="mailto:anabel.humor@gmail.com" >
             <MailIcon class="size-4  md:size-6" />
             Contáctame
+            </SocialBtn>
+
+        <SocialBtn href="https://drive.google.com/file/d/1gdwCprCTnprKK7TcnC29sb1gi1ZG7DiS/view?usp=sharing" >
+            <CvIcon class="size-4  md:size-6" />
+            CV
             </SocialBtn>
     </nav>
 </div>

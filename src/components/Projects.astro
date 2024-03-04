@@ -7,26 +7,16 @@ import Html from "./icons/html.astro";
 import Css from "./icons/css.astro";
 import Tailwind from "./icons/tailwind.astro";
 import Vite from "./icons/vite.astro";
+import Elementor from "./icons/elementor.astro";
 import Bootstrap from "./icons/bootstrap.astro";
 import Astroicon from "./icons/astroicon.astro";
+import Wordpress from "./icons/wordpress.astro";
 
 const TAGS = {
-    HTML: {
-        name: "HTML",
-        class: "bg-[#7A442D] text-white",
-        icon: Html,
-    },
-
-    CSS: {
-        name: "CSS",
-        class: "bg-[#1B779F] text-white",
-        icon: Css,
-    },
-
-    TAILWIND: {
-        name: "Tailwind CSS",
-        class: "bg-[#003159] text-white",
-        icon: Tailwind,
+    ASTRO: {
+        name: "Astro.js",
+        class: "bg-gradient-to-r from-purple-700 to-pink-300 text-white",
+        icon: Astroicon,
     },
 
     BOOTSTRAP: {
@@ -35,12 +25,25 @@ const TAGS = {
         icon: Bootstrap,
     },
 
-
-    ASTRO: {
-        name: "Astro.js",
-        class: "bg-gradient-to-r from-purple-700 to-pink-300 text-white",
-        icon: Astroicon,
+    CSS: {
+        name: "CSS",
+        class: "bg-[#1B779F] text-white",
+        icon: Css,
     },
+
+    ELEMENTOR: {
+        name: "Elementor",
+        class: "bg-[#9A345D] text-white",
+        icon: Elementor,
+    },
+
+
+    HTML: {
+        name: "HTML",
+        class: "bg-[#7A442D] text-white",
+        icon: Html,
+    },
+
 
     REACT: {
         name: "React.js",
@@ -48,17 +51,28 @@ const TAGS = {
         icon: React,
     },
 
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: Tailwind,
+    },
+
     VITE: {
         name: "Vite.js",
         class: "bg-gradient-to-r from-purple-700 to-blue-500 text-white",
         icon: Vite,
     },
+    WORDPRESS: {
+        name: "Wordpress",
+        class: "bg-[#08426A] text-white",
+        icon: Wordpress,
+    }
 };
 
 const PROJECTS = [
     {
         title: "MyTravel",
-        description: "Proyecto web sobre una agencia de viajes.",
+        description: "Este proyecto web fue creado para una agencia de viajes, dirigido a aquellos usuarios que buscan planificar su próximo viaje.",
         link: "https://mytravel-web.netlify.app/",
         github: "#",
         image: "/projects/myTravel.webp",
@@ -67,12 +81,13 @@ const PROJECTS = [
 
     {
         title: "Yumhub",
-        description: "Landing page de un restaurante de pizzas.",
+        description: "Landing page del restaurante de pizzas. Sumérgete en una experiencia culinaria única con nuestras auténticas pizzas artesanales.",
         link: "#",
         github: "https://github.com/AnabelHuancaM/yumHub",
         image: "/projects/yumhub.png",
         tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.ASTRO],
     },
+
 ];
 ---
 

@@ -74,7 +74,7 @@ const PROJECTS = [
         title: "MyTravel",
         description: "Este proyecto web fue creado para una agencia de viajes, dirigido a aquellos usuarios que buscan planificar su próximo viaje.",
         link: "https://mytravel-web.netlify.app/",
-        github: "#",
+        github: "https://github.com/AnabelHuancaM/myTravel",
         image: "/projects/myTravel.webp",
         tags: [TAGS.HTML, TAGS.CSS, TAGS.BOOTSTRAP],
     },
@@ -123,15 +123,7 @@ const PROJECTS = [
                         ))}
                     </ul>
                     
-                <div class="flex items-end justify-start mt-4 gap-x-4">
-                    {
-                        github && (
-                        <SocialBtn href={github}>
-                            <GithubIcon class="size-6"/>
-                            Code
-                        </SocialBtn>
-                        )}
-
+                    <div class="flex items-end justify-start mt-4 gap-x-4">
                     {
                         link && (
                             <SocialBtn href={link}>
@@ -140,8 +132,15 @@ const PROJECTS = [
                             </SocialBtn>
                         )
                     }
+                    {
+                        github && (
+                        <SocialBtn href={github}>
+                            <GithubIcon class="size-6"/>
+                            Code
+                        </SocialBtn>
+                        )}
                 </div>
-                    
+
                 </div>
             </div>
         </article>

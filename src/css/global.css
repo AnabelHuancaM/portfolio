@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background: #04152D;
+}
+
+:root {
+    color-scheme: light dark;
+    --primary: #72c7ff;
+    --secondary: #6E6D8F;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+@font-face {
+  font-family: 'Poppins Regular';
+  font-weight: normal;
+  font-style: normal;
+  src: url('/fonts/poppins-regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Poppins Medium';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/fonts/poppins-medium.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Poppins Semibold';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/fonts/poppins-semibold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Poppins Bold';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/fonts/poppins-bold.ttf') format('ttf');
+}
+
+
+.poppins-regular {
+  font-family: "Poppins Regular", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+  
+.poppins-medium {
+    font-family: "Poppins Medium", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins SemiBold", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.poppins-bold {
+    font-family: 'Poppins Bold', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+h1{
+    font-family: 'Poppins Bold', 'Segoe UI';
+}
+
+h3{
+    color: var(--primary);
+}
+
+strong{
+    color: var(--primary);
+}
+
+.time{
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+@media (prefers-reduce-motion: reduce) {
+    html{
+        scroll-behavior: auto;
+    }
+}

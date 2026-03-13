@@ -3,25 +3,26 @@ import SocialBtn from "./SocialBtn.astro";
 import React from "./icons/react.astro";
 import GithubIcon from "../components/icons/github.astro";
 import LinkIcon from "../components/icons/link.astro";
+import FigmaIcon from "./icons/figma.astro";
+
 import Html from "./icons/html.astro";
 import Css from "./icons/css.astro";
 import Tailwind from "./icons/tailwind.astro";
-import Vite from "./icons/vite.astro";
-import Elementor from "./icons/elementor.astro";
 import Bootstrap from "./icons/bootstrap.astro";
 import Astroicon from "./icons/astroicon.astro";
 import Wordpress from "./icons/wordpress.astro";
+import Angular from "./icons/angular.astro";
 
 const TAGS = {
     ASTRO: {
         name: "Astro.js",
-        class: "bg-gradient-to-r from-purple-700 to-pink-300 text-white",
+        class: "bg-[#d63ad67a] text-white",
         icon: Astroicon,
     },
 
     BOOTSTRAP: {
         name: "Bootstrap",
-        class: "bg-[#3F0D77] text-white",
+        class: "bg-[#6015b580] text-white",
         icon: Bootstrap,
     },
 
@@ -31,23 +32,17 @@ const TAGS = {
         icon: Css,
     },
 
-    ELEMENTOR: {
-        name: "Elementor",
-        class: "bg-[#9A345D] text-white",
-        icon: Elementor,
-    },
-
 
     HTML: {
         name: "HTML",
-        class: "bg-[#7A442D] text-white",
+        class: "bg-[#e34f266e] text-white",
         icon: Html,
     },
 
 
     REACT: {
         name: "React.js",
-        class: "bg-[#1A7181] text-white",
+        class: "bg-[#00caf03b] text-white",
         icon: React,
     },
 
@@ -57,15 +52,22 @@ const TAGS = {
         icon: Tailwind,
     },
 
-    VITE: {
-        name: "Vite.js",
-        class: "bg-gradient-to-r from-purple-700 to-blue-500 text-white",
-        icon: Vite,
+    FIGMA: {
+        name: "Figma",
+        class: "bg-[#003159] text-white",
+        icon: FigmaIcon,
     },
+
     WORDPRESS: {
         name: "Wordpress",
         class: "bg-[#08426A] text-white",
         icon: Wordpress,
+    },
+
+    ANGULAR: {
+        name: "Angular",
+        class: "bg-[#f40c5261] text-white font-semibold",
+        icon: Angular,
     }
 };
 
@@ -76,7 +78,7 @@ const PROJECTS = [
         link: "https://mytravel-web.netlify.app/",
         github: "https://github.com/AnabelHuancaM/myTravel",
         image: "/projects/myTravel.webp",
-        tags: [TAGS.HTML, TAGS.CSS, TAGS.BOOTSTRAP],
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.BOOTSTRAP, TAGS.FIGMA],
     },
 
     {
@@ -86,7 +88,15 @@ const PROJECTS = [
         github: "https://github.com/AnabelHuancaM/yumHub",
         image: "/projects/yumhub.png",
         tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.ASTRO],
-    },
+    }
+    /* {
+        title: "AdminBoard",
+        description: "Landing page del restaurante de pizzas. Sumérgete en una experiencia culinaria única con nuestras auténticas pizzas artesanales.",
+        link: "https://yumhub01.vercel.app/",
+        github: "https://github.com/AnabelHuancaM/yumHub",
+        image: "/projects/yumhub.png",
+        tags: [TAGS.HTML, TAGS.BOOTSTRAP, TAGS.REACT],
+    } */
 
 ];
 ---
@@ -98,21 +108,16 @@ const PROJECTS = [
         <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
             <div class="w-full md:w-1/2">
                 <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-                    <img
-                        class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                    <img class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
                         loading="lazy" src={image} alt={title}/>
                 </div>
             </div>
 
             <div class="w-full md:w-1/2 md:max-w-lg">
-                <h3 class="text-xl font-bold text-gray-700 dark:text-gray-100">
-                    {title}
-                </h3>
-                
-                <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+                <h3 class="mb-3 text-xl font-bold text-gray-700 dark:text-gray-100"> {title} </h3>
+                <p class="mb-4 text-gray-700 dark:text-gray-400">{description}</p>
 
-                <div class="flex flex-wrap mt-2">
-                    <ul class="flex flex-row mb-2 gap-x-2">
+                    <ul class="flex flex-row gap-x-2">
                         {tags.map((tag) => (
                             <li>
                                 <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `} >
@@ -123,25 +128,23 @@ const PROJECTS = [
                         ))}
                     </ul>
                     
-                    <div class="flex items-end justify-start mt-4 gap-x-4">
+                    <div class="flex flex-wrap items-end justify-start mt-4 gap-3">
                     {
                         link && (
-                            <SocialBtn href={link}>
-                                <LinkIcon class="size-6"/>
-                                Preview
-                            </SocialBtn>
+                            <SocialBtn href={link}> <LinkIcon class="size-6"/> Visualizar </SocialBtn>
                         )
                     }
                     {
                         github && (
-                        <SocialBtn href={github}>
-                            <GithubIcon class="size-6"/>
-                            Code
-                        </SocialBtn>
+                            <SocialBtn href={github}> <GithubIcon class="size-6"/> Repositorio </SocialBtn>
                         )}
+                    {/* {
+                        link && (
+                            <SocialBtn href={link}> <FigmaIcon class="size-6"/> Prototipo </SocialBtn>
+                        )} */}
                 </div>
 
-                </div>
+               
             </div>
         </article>
     ))

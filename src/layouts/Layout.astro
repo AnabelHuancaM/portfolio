@@ -18,11 +18,12 @@ const { title } = Astro.props;
 		<meta name="description" content="Portafolio de Anabel Huanca Moreano - anabelhumor">
 		<link rel="icon" type="image/svg+xml" href="perfil.jpg" />
 		<meta name="robots" content="index, follow">
+		<link rel="stylesheet" href="/src/css/global.css">
 
 		<!-- OPEN GRAPH -->
-	<meta property="og:title" content="Portafolio de Anabel Huanca Moreano @anabelhumor">
-	<meta property="og:image" content="/portafolio.JPG">
-	<meta property="og:image:alt" content="Una captura de mi portafolio">
+		<meta property="og:title" content="Portafolio de Anabel Huanca Moreano @anabelhumor">
+		<meta property="og:image" content="/portafolio.JPG">
+		<meta property="og:image:alt" content="Una captura de mi portafolio">
 
 		<title>{title}</title>
 	</head>
@@ -32,45 +33,4 @@ const { title } = Astro.props;
 		<Footer/>
 	</body>
 </html>
-<style is:global>
- 	:root {
-		color-scheme: light dark;
-		--primary: #4154f1;
-		--secondary: #6E6D8F;
-	}
 
-	*{
-		box-sizing: border-box;
-	}
-
-	html {
-  	font-family: 'Poppins', sans-serif;
-	scroll-behavior: smooth;
-	background: #04152D;
-	}
-	
-	body{
-		display: flex;
-		flex-direction: column;
-		height: 100vh;
-	}
-
-	h3{
-		color: var(--primary);
-	}
-	
-	strong{
-		color: var(--primary);
-	}
-
-	.time{
-		color: var(--secondary);
-		font-weight: bold;
-	}
-
-	@media (prefers-reduce-motion: reduce) {
-		html{
-			scroll-behavior: auto;
-		}
-	}
-</style>

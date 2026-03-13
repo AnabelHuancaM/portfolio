@@ -1,9 +1,21 @@
 ---
-import Linktreeicon from "../components/icons/linktree.astro";
+import LinkedinIcon from "../components/icons/linkedin.astro";
+import Github from "./icons/github.astro";
+import Behance from "./icons/behance.astro";
 ---
 <footer class="py-8">
-    <a href="https://social-anabelhumor.vercel.app/" target="_blank">
-        <Linktreeicon class="size-8 m-auto"/>
-    </a>
-    <p class="mt-8 text-center text-xs">© Anabel Huanca 2024. Inspired by <a href="https://github.com/midudev" class="hover:underline">Midudev</a>.</p>
+    <div class="row">
+        <p class="mt-8 text-center text-xs">© Anabel Huanca Moreano - 2026.</p>
+        <div class="flex justify-center mt-4 gap-x-4">
+            <a href="https://www.linkedin.com/in/anabelhuancam/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors duration-300" target="_blank">
+                <LinkedinIcon class="size-5" />
+            </a>
+           <a href="https://github.com/anabelhuancam" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors duration-300" target="_blank">
+                <Github class="size-5" />
+            </a> 
+            <a href="https://www.behance.net/anabelhuancam" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors duration-300" target="_blank">
+                <Behance class="size-5" />
+            </a>
+        </div>
+    </div>
 </footer>

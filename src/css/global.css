@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background: var(--bg);
+}
+
+:root {
+    --primary: #72c7ff;
+    --secondary: #6E6D8F;
+    --gray-text: #a2b6cc;
+    --bg: #04152D;
+    --text: #fdfdfd;
+    --text-white: #cbeaff;
+    --blue: #153681;
+}
+
+:root[data-theme="light"] {
+    --primary: #0061b7;
+    --secondary: #6E6D8F;
+    --gray-text: #456a91;
+    --bg: #e7f1ff;
+    --text: #202020;
+    --text-white: #0b214b;
+    --blue: #153681;
+}
+
+:root[data-theme="dark"] {
+    --primary: #72c7ff;
+    --secondary: #c7dfff;
+    --gray-text: #a2b6cc;
+    --bg: #04152D;
+    --text: #fdfdfd;
+    --text-white: #cbeaff;
+    --blue: #8ba4dd;
+}
+
+.theme-toggle {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.theme-toggle span {
+    position: absolute;
+    inset: 0;
+    transition: opacity .3s ease;
+}
+
+/* Oscuro por defecto */
+.sun {
+    opacity: 1;
+}
+
+.moon {
+    opacity: 0;
+}
+
+/* Tema claro */
+[data-theme="light"] .sun {
+    opacity: 0;
+}
+
+[data-theme="light"] .moon {
+    opacity: 1;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* ----------------- POPPINS ------------------ */
+@font-face {
+    font-family: 'Poppins Regular';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/fonts/Poppins/poppins-regular.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Medium';
+    font-weight: 500;
+    font-style: normal;
+    src: url('/fonts/Poppins/poppins-medium.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Semibold';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/fonts/Poppins/poppins-semibold.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Bold';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/fonts/Poppins/poppins-bold.ttf') format('ttf');
+}
+
+
+/* ----------------- INTER ------------------ */
+@font-face {
+    font-family: 'Inter Regular';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/fonts/Inter/inter-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter Medium';
+    font-weight: 500;
+    font-style: normal;
+    src: url('/fonts/Inter/inter-medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter Semibold';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/fonts/Inter/inter-semibold.woff2') format('woff2');
+}
+
+h1 {
+    font-family: 'Poppins';
+}
+
+h3 {
+    color: var(--primary);
+}
+
+strong{
+    color: var(--primary);
+}
+
+.time{
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+@media (prefers-reduce-motion: reduce) {
+    html{
+        scroll-behavior: auto;
+    }
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+}
+
+.bg-primary {
+    background-color: var(--primary);
+}
+
+.secondary {
+    color: var(--secondary);
+}
+
+/*EXPERIENCE-----*/
+.subtitle-company{
+    font-family: 'Poppins', sans-serif;
+}
+
+.title-experience {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.description-experience {
+    font-size: 1rem;
+    color: var(--gray-text);
+    font-family: 'Inter', sans-serif;
+}
+
+.text_white {
+    color: var(--text-white);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.time {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.project_title {
+    font-family: 'Poppins';
+}
+
+@layer components {
+    .project_title {
+      @apply mb-3 text-xl font-bold text_white;
+    }
+}
+
+@layer components {
+    .project_subtitle {
+      @apply mb-4 secondary;
+    }
+}
+
+@layer components {
+    .social-btn {
+      @apply bg-white/5 border border-gray-500 rounded-full flex justify-center items-center gap-x-2
+                py-2 px-3  lg:py-2 lg:px-4 text-base transition
+                hover:scale-110 hover:bg-white/10 ;
+    }
+}
+
+@layer components {
+    .project-tag {
+      @apply flex gap-x-2 rounded-full text-xs py-1 px-2 ;
+    }
+}

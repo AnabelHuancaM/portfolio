@@ -9,16 +9,11 @@ interface Props {
 const { company, title, description, date } = Astro.props
 ---
 
-    <div
-    class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"
-    >
+    <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 bg-primary">
     </div>
-    <time class="mb-1 text-sm font-normal leading-none
-     time dark:text-blue-500">
-     {date}</time
-    >
-    <h5 class="text-lg font-semibold mt-2"> {company} </h5>
-    <h3 class="text-lg font-semibold mt-2"> {title} </h3>
-    <p class="mb-4 text-base font-normal dark:text-gray-400 text-pretty">
+    <time class="time">{date}</time>
+    <h5 class="subtitle-company mb-2"> {company} </h5>
+    <h3 class="title-experience"> {title} </h3>
+    <p class="description-experience mb-4">
     {description}
     </p>

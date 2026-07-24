@@ -1,12 +1,20 @@
 ---
-
+import Sun from './icons/sun.astro';
+import Moon from './icons/moon.astro';
 ---
-<header class="fixed top-1 z-10 flex items-center 
-justify-center w-full mx-auto mt-2 ">
-    <nav class="flex flex-row gap-5 rounded-full px-3">
+<header class="fixed top-1 z-10 flex items-center justify-center w-full mx-auto mt-2 ">
+    <nav class="flex flex-row gap-4 rounded-full px-3">
         <a href="#experiencia">Experiencia</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#sobre-mi">Sobre mí</a>
+        <button id="theme-toggle" class="theme-toggle">
+          <span class="sun">
+              <Sun />
+          </span>
+          <span class="moon">
+              <Moon />
+          </span>
+        </button>
     </nav>
 </header>
 
@@ -23,3 +31,24 @@ justify-center w-full mx-auto mt-2 ">
       }
     }
   </style>
+
+<script>
+    const root = document.documentElement;
+    const button = document.getElementById("theme-toggle");
+
+    const theme = localStorage.getItem("theme") || "dark";
+
+    root.setAttribute("data-theme", theme);
+
+    button?.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme");
+
+        const next =
+            current === "dark"
+                ? "light"
+                : "dark";
+
+        root.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+    });
+</script>

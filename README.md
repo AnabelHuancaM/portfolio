@@ -1,15 +1,9 @@
-<h2 align="left">Hi 👋! My name is Anabel and I'm a Front end developer and UI/UX design student.</h2>
-
-######
-<div align="left">
-    <img src="https://streak-stats.demolab.com?user=anabelhuancam&locale=en&mode=daily&theme=radical&hide_border=false&border_radius=5&order=3" height="220" alt="streak graph"  />
-      <img align="right" height="170" src="https://i.pinimg.com/originals/0d/10/d2/0d10d2fe48a7956a4fdc9f7251132236.gif"  />
-</div>
+<h2 align="left">Hi 👋! My name is Anabel and I'm a Front end developer and UI/UX design </h2>
 
 
 ###
 
-<div align="center">
+<div >
   <img src="https://github-readme-stats.vercel.app/api?username=anabelhuancam&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=tokyonight&locale=en&hide_border=false&order=1" height="150" alt="stats graph"  />
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=anabelhuancam&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=radical&hide_border=true&order=2" height="150" alt="languages graph"  />
 </div>
@@ -53,15 +47,6 @@
   </a>
   <a href="https://www.behance.net/anabel_humor" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Behance&logo=behance&label=&color=1769ff&logoColor=white&labelColor=&style=for-the-badge" height="40" alt="behance logo"  />
-
-
-
-
-
-
-
-
-
   </a>
 
 </div>

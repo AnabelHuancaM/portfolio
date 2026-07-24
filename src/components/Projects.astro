@@ -72,31 +72,23 @@ const TAGS = {
 };
 
 const PROJECTS = [
-    {
+/*     {
         title: "MyTravel",
         description: "Este proyecto web fue creado para una agencia de viajes, dirigido a aquellos usuarios que buscan planificar su próximo viaje.",
-        link: "https://mytravel-web.netlify.app/",
+        link: "a",
         github: "https://github.com/AnabelHuancaM/myTravel",
         image: "/projects/myTravel.webp",
         tags: [TAGS.HTML, TAGS.CSS, TAGS.BOOTSTRAP, TAGS.FIGMA],
-    },
+    }, */
 
     {
-        title: "Yumhub",
-        description: "Landing page del restaurante de pizzas. Sumérgete en una experiencia culinaria única con nuestras auténticas pizzas artesanales.",
-        link: "https://yumhub01.vercel.app/",
-        github: "https://github.com/AnabelHuancaM/yumHub",
-        image: "/projects/yumhub.png",
-        tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.ASTRO],
+        title: "Aura Café & Bites",
+        description: "Esta website ofrece una experiencia interactiva y atractiva para los amantes del café, destacando la calidad de sus productos y la atmósfera acogedora del café.",
+        link: "https://aura-cafe-bites.vercel.app/",
+        github: "https://github.com/AnabelHuancaM/auraCafe",
+        image: "/projects/auraCafe.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.REACT, TAGS.TAILWIND],
     }
-    /* {
-        title: "AdminBoard",
-        description: "Landing page del restaurante de pizzas. Sumérgete en una experiencia culinaria única con nuestras auténticas pizzas artesanales.",
-        link: "https://yumhub01.vercel.app/",
-        github: "https://github.com/AnabelHuancaM/yumHub",
-        image: "/projects/yumhub.png",
-        tags: [TAGS.HTML, TAGS.BOOTSTRAP, TAGS.REACT],
-    } */
 
 ];
 ---
@@ -114,13 +106,13 @@ const PROJECTS = [
             </div>
 
             <div class="w-full md:w-1/2 md:max-w-lg">
-                <h3 class="mb-3 text-xl font-bold text-gray-700 dark:text-gray-100"> {title} </h3>
-                <p class="mb-4 text-gray-700 dark:text-gray-400">{description}</p>
+                <h3 class="project_title"> {title} </h3>
+                <p class="project_subtitle">{description}</p>
 
-                    <ul class="flex flex-row gap-x-2">
+                    <ul class="flex flex-row flex-wrap gap-x-2">
                         {tags.map((tag) => (
                             <li>
-                                <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `} >
+                                <span class={`project-tag  ${tag.class}`} >
                                     <tag.icon class="size-4" />
                                     {tag.name}
                                 </span>
@@ -138,13 +130,7 @@ const PROJECTS = [
                         github && (
                             <SocialBtn href={github}> <GithubIcon class="size-6"/> Repositorio </SocialBtn>
                         )}
-                    {/* {
-                        link && (
-                            <SocialBtn href={link}> <FigmaIcon class="size-6"/> Prototipo </SocialBtn>
-                        )} */}
                 </div>
-
-               
             </div>
         </article>
     ))

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -90,28 +90,28 @@ body{
     font-family: 'Poppins Regular';
     font-weight: normal;
     font-style: normal;
-    src: url('/fonts/Poppins/poppins-regular.ttf') format('ttf');
+    src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Poppins Medium';
     font-weight: 500;
     font-style: normal;
-    src: url('/fonts/Poppins/poppins-medium.ttf') format('ttf');
+    src: url('/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Poppins Semibold';
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
-    src: url('/fonts/Poppins/poppins-semibold.ttf') format('ttf');
+    src: url('/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Poppins Bold';
     font-weight: 700;
     font-style: normal;
-    src: url('/fonts/Poppins/poppins-bold.ttf') format('ttf');
+    src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
 }
 
 
@@ -120,21 +120,21 @@ body{
     font-family: 'Inter Regular';
     font-weight: normal;
     font-style: normal;
-    src: url('/fonts/Inter/inter-regular.woff2') format('woff2');
+    src: url('/fonts/Inter/Inter_24pt-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Inter Medium';
     font-weight: 500;
     font-style: normal;
-    src: url('/fonts/Inter/inter-medium.woff2') format('woff2');
+    src: url('/fonts/Inter/Inter_24pt-Medium.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Inter Semibold';
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
-    src: url('/fonts/Inter/inter-semibold.woff2') format('woff2');
+    src: url('/fonts/Inter/Inter_24pt-SemiBold.ttf') format('truetype');
 }
 
 h1 {

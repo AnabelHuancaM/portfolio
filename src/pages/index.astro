@@ -7,9 +7,12 @@ import Experience from '../components/Experience.astro';
 import Bag from '../components/icons/bag.astro';
 import Code from '../components/icons/code.astro';
 import TechIcon from '../components/icons/techIcon.astro';
+import DesignIcon from '../components/icons/design.astro';
 import Aboutme from '../components/icons/about.astro';
 import Projects from '../components/Projects.astro';
 import Tech from '../components/Tech.astro';
+import Design from '../components/Design.astro';
+import CMS from '../components/CMS.astro';
 import About from '../components/About.astro';
 import Hero from '../components/Hero.astro';
 ---
@@ -37,15 +40,29 @@ import Hero from '../components/Hero.astro';
 	<SectionContainer id="sobre-mi">
 		<h2 class="text-2xl font-bold mb-8 flex gap-x-3 items-center">
 			<Aboutme class="size-7"/>
-			Sobre mi</h2>
+			Acerca de mi</h2>
 			<About/>	
 	</SectionContainer>
 
 	<SectionContainer >
 		<h2 class="text-2xl font-bold mb-8 flex gap-x-3 items-center">
 			<TechIcon class="size-6"/>
-			Tecnologías</h2>
+			Desarrollo</h2>
 			<Tech/>
 	</SectionContainer>
+	
+	<SectionContainer >
+		<h2 class="text-2xl font-bold mb-8 flex gap-x-3 items-center">
+			<DesignIcon class="size-6"/>
+			Diseño</h2>
+			<Design/>
+	</SectionContainer>
+
+<!-- 	<SectionContainer >
+		<h2 class="text-2xl font-bold mb-8 flex gap-x-3 items-center">
+			<TechIcon class="size-6"/>
+			CMS</h2>
+			<CMS/>
+	</SectionContainer> -->
 	</main>
 </Layout>

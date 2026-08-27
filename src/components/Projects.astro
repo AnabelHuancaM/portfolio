@@ -3,6 +3,7 @@ import SocialBtn from "./SocialBtn.astro";
 import React from "./icons/react.astro";
 import GithubIcon from "../components/icons/github.astro";
 import LinkIcon from "../components/icons/link.astro";
+import BehanceIcon from "../components/icons/behance.astro";
 import FigmaIcon from "./icons/figma.astro";
 
 import Html from "./icons/html.astro";
@@ -74,9 +75,10 @@ const TAGS = {
 const PROJECTS = [
      {
         title: "MyTravel",
-        description: "Este proyecto web fue creado para una agencia de viajes, dirigido a aquellos usuarios que buscan planificar su próximo viaje.",
+        description: "Diseño y desarrollo de una plataforma web para explorar destinos turísticos, enfocada en organizar y presentar información de viaje de forma clara y accesible.",
         link: "https://web-my-travel.vercel.app/",
-        github: "https://github.com/AnabelHuancaM/myTravel",
+        behance: "https://www.behance.net/gallery/196643829/myTravel-20",
+        /* github: "https://github.com/AnabelHuancaM/myTravel", */
         image: "/projects/myTravel.webp",
         tags: [TAGS.HTML, TAGS.CSS, TAGS.BOOTSTRAP, TAGS.FIGMA, TAGS.REACT],
     }, 
@@ -86,17 +88,17 @@ const PROJECTS = [
         description: "Esta website ofrece una experiencia interactiva y atractiva para los amantes del café, destacando la calidad de sus productos y la atmósfera acogedora del café.",
         link: "https://aura-cafe-bites.vercel.app/",
         github: "https://github.com/AnabelHuancaM/auraCafe",
+        /* behance: "https://www.behance.net/anabel_humor", */
         image: "/projects/auraCafe.webp",
         tags: [TAGS.HTML, TAGS.CSS, TAGS.REACT, TAGS.TAILWIND, TAGS.FIGMA],
     }
-
 ];
 ---
 
 <div class="flex flex-col gap-y-16">
     {
     //llamando a los props
-    PROJECTS.map(({ title, description, image, tags, link, github }) => (
+    PROJECTS.map(({ title, description, image, tags, link, github, behance }) => (
         <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
             <div class="w-full md:w-1/2">
                 <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -129,6 +131,10 @@ const PROJECTS = [
                     {
                         github && (
                             <SocialBtn href={github}> <GithubIcon class="size-6"/> Repositorio </SocialBtn>
+                        )}
+                    {
+                        behance && (
+                            <SocialBtn href={behance}> <BehanceIcon class="size-6"/> Ver proceso </SocialBtn>
                         )}
                 </div>
             </div>

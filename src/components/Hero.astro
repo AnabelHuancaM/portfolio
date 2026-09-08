@@ -3,9 +3,11 @@ import MailIcon from "../components/icons/email.astro";
 import LinkedinIcon from "../components/icons/linkedin.astro";
 import CvIcon from "../components/icons/cv.astro";
 import SocialBtn from "../components/SocialBtn.astro";
+
+const avatarUrl = import.meta.env.PUBLIC_AVATAR_URL || "/perfil.jpg";
 ---
 <div class="">
-    <img class="rounded-full size-12 mb-7" src="/perfil.jpg" alt="foto">
+    <img class="rounded-full size-12 mb-7" src={avatarUrl} alt="Anabel Huanca Moreano" width="48" height="48" fetchpriority="high" decoding="async">
     
     <h1 class="text_white text-2xl md:text-4xl lg:text-5xl 
     font-semibold pb-6 lg:pb-5 ">
@@ -21,14 +23,14 @@ import SocialBtn from "../components/SocialBtn.astro";
             LinkedIn
             </SocialBtn>
 
+        <SocialBtn href="https://drive.google.com/file/d/15liIRogFYmDzTx-2FMxNoykVoz-TfrTL/view?usp=sharing" >
+            <CvIcon class="size-4  md:size-6" aria-label="PDF CV" />
+            Ver Currículum
+            </SocialBtn>
+
         <SocialBtn href="mailto:anabel.humor@gmail.com" >
             <MailIcon class="size-4  md:size-6" aria-label="Email" />
             Contáctame
-            </SocialBtn>
-
-        <SocialBtn href="https://drive.google.com/file/d/15liIRogFYmDzTx-2FMxNoykVoz-TfrTL/view?usp=sharing" >
-            <CvIcon class="size-4  md:size-6" aria-label="PDF CV" />
-            CV
             </SocialBtn>
     </nav>
 </div>

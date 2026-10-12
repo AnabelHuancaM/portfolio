@@ -1,0 +1,6 @@
+---
+const { class: className , id} = Astro.props
+---
+<section id={id} data-reveal class={`fade-up mx-auto lg:w-[1338px] px-4 pb-20 ${className}`}>
+    <slot />
+</section>

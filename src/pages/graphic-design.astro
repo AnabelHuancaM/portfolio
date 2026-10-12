@@ -1,9 +1,49 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import DesignLayout from "../layouts/DesignLayout.astro";
+
+import SectionContainer from "../components/Design/SectionContainer.astro";
+import Hero from "../components/Design/Hero.astro";
+import Categories from "../components/Design/Categories.astro";
+import Projects from "../components/Design/Projects.astro";
+import Experience from '../components/Experience.astro';
+
+import BagIcon from '../components/icons/bag.astro';
+import DesignIcon from '../components/icons/design.astro';
+import Aboutme from '../components/icons/about.astro';
+import AboutMe from "../components/Design/AboutMe.astro";
+
 ---
 
-<Layout title="Graphic Design">
+<DesignLayout title="Diseño gráfico | Anabel Huanca Moreano">
 	<main>
-		<h1>Graphic Design</h1>
+		<SectionContainer class="py-16 pb-24 md:py-36">
+			<Hero />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="text-2xl font-bold mb-8 flex gap-x-3 items-center">
+				<DesignIcon class="size-7" />
+				Proyectos
+			</h2>
+			<Categories/>
+			<Projects/>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-2xl font-bold mb-8 flex gap-x-3 items-center poppins">
+				<BagIcon class="size-7"/>
+				Experiencia laboral</h2>
+			<Experience/>
+		</SectionContainer>
+
+	<section id="sobre-mi" class="about-bg pt-20">
+		<SectionContainer>
+			<h2 class="text-2xl font-bold mb-8 flex gap-x-3 items-center">
+				<Aboutme class="size-7"/>
+				Acerca de mi</h2>
+				<AboutMe/>
+		</SectionContainer>
+	</section>
+
 	</main>
-</Layout>
+</DesignLayout>

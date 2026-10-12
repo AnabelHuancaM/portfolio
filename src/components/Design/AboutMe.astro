@@ -1,0 +1,53 @@
+---
+import IllustratorIcon from "../../components/icons/illustrator.astro";
+import FigmaIcon from "../../components/icons/figma.astro";
+import AffinityDesignIcon from "../../components/icons/affinitydesign.astro";
+import CanvaIcon from "../../components/icons/canva.astro";
+
+const personalImageAlt = "Anabel";
+const avatarUrl = import.meta.env.PUBLIC_AVATAR_URL || "/perfil.jpg";
+---
+    <!-- Grid principal -->
+  <div class="grid grid-cols-1 gap-5 md:grid-cols-12">
+      <article class="flex min-h-[420px] flex-col justify-between
+               rounded-2xl bg-white p-6 md:col-span-7 md:row-span-2">
+        <div>
+          <h3 class="mb-3 font-semibold primary-color">
+            HISTORIA DE ORIGEN
+          </h3>
+          <p class="text-base/7 text-gray-600">Me presento, soy Anabel. Mi gusto por el diseño se remonta desde los 10 años aproximadamente al ver a mi hermana mayor realizando trabajos en Corel Draw y Photoshop. Me impactó lo que se podía realizar y las miles de posibilidades y herramientas. Me llamó la atención la carrera de diseño gráfico y sabía que en algún momento de mi vida estudiaría esta carrera.
+            Actualmente, siendo 2026 empecé esta nueva aventura.</p>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="rounded-full bg-sky-100 px-3 py-2 text-xs text-blue-700">
+            De Lima, Perú
+          </span>
+          <span class="rounded-full bg-sky-100 px-3 py-2 text-xs text-blue-700">
+            Disponible para trabajo
+          </span>
+        </div>
+      </article>
+
+      <div class="min-h-[195px] rounded-2xl bg-blue-200 md:col-span-5">
+
+      </div>
+
+      <div class="flex justify-center items-center rounded-2xl min-h-[195px] bg-slate-950 md:col-span-5">
+        <img src="/nightwing.svg" alt="nightwing">
+      </div>
+
+      <!-- Herramientas -->
+      <article class="min-h-[214px] rounded-2xl bg-white/60 p-6 md:col-span-6">
+        <h3 class="mb-5 font-semibold primary-color"> HERRAMIENTAS </h3>
+          <div class="flex flex-wrap gap-4 my-5">
+              <FigmaIcon class="size-10" />
+              <IllustratorIcon class="size-10" />
+              <AffinityDesignIcon class="size-10" />
+              <CanvaIcon class="size-10" />
+          </div>
+      </article>
+
+      <!-- Tarjeta inferior derecha -->
+      <div class="min-h-[214px] rounded-2xl bg-sky-700 md:col-span-6"></div>
+  </div>

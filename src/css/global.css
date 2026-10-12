@@ -22,6 +22,7 @@ html {
     --text: #fdfdfd;
     --text-white: #cbeaff;
     --blue: #153681;
+    --light-celeste: #D9E9FF;
 }
 
 :root[data-theme="light"] {
@@ -32,6 +33,7 @@ html {
     --text: #202020;
     --text-white: #0b214b;
     --blue: #153681;
+    --light-celeste: #D9E9FF;
 }
 
 :root[data-theme="dark"] {
@@ -42,6 +44,7 @@ html {
     --text: #fdfdfd;
     --text-white: #cbeaff;
     --blue: #8ba4dd;
+    --light-celeste: #052c4b;
 }
 
 .theme-toggle {
@@ -225,6 +228,10 @@ p {
     font-family: 'Poppins';
 }
 
+.about-bg {
+    background-color: var(--light-celeste)
+}
+
 @layer components {
     .project_title {
       @apply mb-3 text-xl font-bold text_white;
@@ -248,5 +255,22 @@ p {
 @layer components {
     .project-tag {
       @apply flex gap-x-2 rounded-full text-xs py-1 px-2 mb-1 ;
+    }
+}
+
+@layer components {
+    .badge-categories {
+      @apply text-sm font-medium px-3 py-1 rounded-full mr-1;
+    }
+}
+
+.badge-categories {
+    border: 1px solid var(--primary);
+    color: var(--blue);
+}
+
+@layer components {
+    .badge-categories.active {
+        @apply bg-primary text-white text-sm font-medium px-3 py-1 rounded-full;
     }
 }

@@ -1,0 +1,46 @@
+---
+export const TAGS = {
+    LOGOS: {
+        name: "Logos",
+        class: "bg-[#d63ad67a] text-white",
+    },
+    BRANDING: {
+        name: "Branding",
+        class: "bg-[#f40c5261] text-white",
+    },
+    DISEÑO_WEB: {
+        name: "Diseño web",
+        class: "bg-[#1B779F] text-white",
+    },
+    ILUSTRACIÓN: {
+        name: "Ilustración",
+        class: "bg-[#e34f266e] text-white",
+    },
+    SOCIAL_MEDIA: {
+        name: "Social Media",
+        class: "bg-[#e34f266e] text-white",
+    },
+};
+
+---
+
+<div class="flex overflow-hidden sm:overflow-x-auto gap-2 mb-5">
+    <a href="">
+        <span class="badge-categories inline-block active">Todos</span>
+    </a>
+    <a href="">
+        <span class="badge-categories inline-block">{TAGS.BRANDING.name}</span>
+    </a>
+    <a href="">
+        <span class="badge-categories inline-block">{TAGS.LOGOS.name}</span>
+    </a>
+    <a href="">
+        <span class="badge-categories inline-block">{TAGS.DISEÑO_WEB.name}</span>
+    </a>
+    <a href="">
+        <span class="badge-categories inline-block">{TAGS.ILUSTRACIÓN.name}</span>
+    </a>
+    <a href="">
+        <span class="badge-categories inline-block">{TAGS.SOCIAL_MEDIA.name}</span>
+    </a>
+</div>

@@ -1,0 +1,350 @@
+---
+import { graphicProjects } from "../../data/designProjects.js";
+import FigmaIcon from "../icons/figma.astro";
+import IllustratorIcon from "../icons/illustrator.astro";
+
+---
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 py-8">
+    {graphicProjects.map(({ id, title, image }) => (
+        <button
+            type="button"
+            class="group relative isolate flex min-h-[300px] w-full items-end overflow-hidden rounded-xl border border-white/10 p-5 text-left shadow-lg"
+            data-gallery-open={id}
+            aria-haspopup="dialog"
+            aria-controls={`gallery-${id}`}
+        >
+            <img
+                class="absolute inset-0 -z-10 size-full object-cover transition duration-500 group-hover:scale-105"
+                src={image}
+                alt=""
+                loading="lazy"
+                decoding="async"
+            />
+            <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
+            <span class="mb-2 text-lg font-semibold text-white">{title}</span>
+        </button>
+    ))}
+</div>
+
+
+{graphicProjects.map(({ id, title, description, category, gallery, tools }) => (
+    <dialog id={`gallery-${id}`}
+        class="project-gallery" aria-labelledby={`gallery-title-${id}`}
+        aria-describedby={`gallery-description-${id}`}>
+
+        <header class="project-gallery__header">
+            <form method="dialog">
+                <button class="project-gallery__close" aria-label={`Cerrar galería de ${title}`}>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </form>
+        </header>
+        <aside class="project-gallery__tools">
+            <button
+                class="project-gallery__tools-button"
+                type="button"
+                aria-label={`Herramientas utilizadas en ${title}`}
+                aria-expanded="false"
+                aria-controls={`tools-${id}`}
+                data-tools-toggle
+            >
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                    <path d="M14.7 6.3a5 5 0 0 0-6.4 6.4l-5.1 5.1a2.1 2.1 0 0 0 3 3l5.1-5.1a5 5 0 0 0 6.4-6.4l-3 3-3-3 3-3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+            <span class="project-gallery__tools-label">Herramientas</span>
+            <section class="project-gallery__tools-popover" id={`tools-${id}`} aria-label={`Herramientas utilizadas en ${title}`}>
+                <p>HERRAMIENTAS</p>
+                <ul>
+                    {tools.map((tool) => (
+                        <li>
+                            {tool === "Figma" && <FigmaIcon class="project-gallery__tool-icon" />}
+                            {tool === "Illustrator" && <IllustratorIcon class="project-gallery__tool-icon" />}
+                            <span>{tool}</span>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        </aside>
+        <div class="project-gallery__images">
+            <div class="mb-8">
+                <p class="project-gallery__category">{category}</p>
+                <h2 id={`gallery-title-${id}`}>{title}</h2>
+                <p id={`gallery-description-${id}`} class="project-gallery__description">{description}</p>
+            </div>
+            {gallery.map((galleryImage, index) => (
+                <img
+                    src={galleryImage}
+                    alt={`${title} — imagen ${index + 1}`}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                />
+            ))}
+        </div>
+    </dialog>
+))}
+
+<script>
+    const galleryButtons = document.querySelectorAll<HTMLButtonElement>("[data-gallery-open]");
+
+    galleryButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const projectId = button.dataset.galleryOpen;
+            const dialog = projectId
+                ? document.getElementById(`gallery-${projectId}`)
+                : null;
+
+            if (!(dialog instanceof HTMLDialogElement)) {
+                throw new Error(`No se encontró la galería del proyecto "${projectId}".`);
+            }
+
+            dialog.showModal();
+        });
+    });
+
+    document.querySelectorAll<HTMLDialogElement>(".project-gallery").forEach((dialog) => {
+                const toolsButton = dialog.querySelector<HTMLButtonElement>("[data-tools-toggle]");
+
+                toolsButton?.addEventListener("click", () => {
+                    const isExpanded = toolsButton.getAttribute("aria-expanded") === "true";
+                    toolsButton.setAttribute("aria-expanded", String(!isExpanded));
+                    dialog.classList.toggle("project-gallery--tools-open", !isExpanded);
+                });
+
+                dialog.addEventListener("click", (event) => {
+                    if (event.target === dialog) {
+                        dialog.close();
+                    }
+                });
+
+                dialog.addEventListener("close", () => {
+                    toolsButton?.setAttribute("aria-expanded", "false");
+                    dialog.classList.remove("project-gallery--tools-open");
+                });
+            });
+</script>
+
+<style>
+            .project-gallery {
+                position: fixed;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                max-width: none;
+                max-height: none;
+                margin: 0;
+                padding: 0;
+                overflow: auto;
+                border: 0;
+                background: #090b10;
+                color: #fff;
+            }
+
+            .project-gallery::backdrop {
+                background: rgb(0 0 0 / 85%);
+            }
+
+            .project-gallery__header {
+                position: fixed;
+                z-index: 2;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .project-gallery__close {
+                display: grid;
+                width: 2.75rem;
+                height: 2.75rem;
+                place-items: center;
+                border: 1px solid rgb(255 255 255 / 25%);
+                border-radius: 9999px;
+                background: rgb(15 18 24 / 85%);
+                color: #fff;
+                cursor: pointer;
+                font-size: 1.75rem;
+                line-height: 1;
+            }
+
+            .project-gallery__images {
+                display: grid;
+                justify-items: center;
+                padding: 5rem clamp(0.75rem, 5vw, 4rem) 3rem;
+            }
+
+            .project-gallery__images > div {
+                width: min(100%, 1200px);
+            }
+
+            .project-gallery__images img {
+                display: block;
+                width: 100%;
+                max-width: 1200px;
+                height: auto;
+            }
+
+            .project-gallery__category {
+                margin: 0;
+                color: #72c7ff;
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+            }
+
+            .project-gallery__images h2 {
+                margin: 0.15rem 0;
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+
+            .project-gallery__description {
+                margin: 0;
+                color: #cbd5e1;
+                font-size: 0.875rem;
+            }
+
+            .project-gallery__tools {
+                position: fixed;
+                z-index: 3;
+                top: 50%;
+                right: 1.5rem;
+                display: grid;
+                justify-items: center;
+                gap: 0.35rem;
+                transform: translateY(-50%);
+            }
+
+            .project-gallery__tools-button {
+                display: grid;
+                width: 3.5rem;
+                height: 3.5rem;
+                place-items: center;
+                border: 0;
+                border-radius: 50%;
+                background: #fff;
+                color: #17191d;
+                cursor: pointer;
+                box-shadow: 0 2px 12px rgb(0 0 0 / 28%);
+            }
+
+            .project-gallery__tools-button svg {
+                width: 1.4rem;
+                height: 1.4rem;
+            }
+
+            .project-gallery__tools-button:hover,
+            .project-gallery__tools-button:focus-visible,
+            .project-gallery__tools-button[aria-expanded="true"] {
+                background: #e8f4ff;
+                outline: none;
+            }
+
+            .project-gallery__tools-label {
+                color: #fff;
+                font-size: 0.7rem;
+                font-weight: 600;
+                text-shadow: 0 1px 5px #000;
+            }
+
+            .project-gallery__tools-popover {
+                position: absolute;
+                top: 50%;
+                right: calc(100% + 1rem);
+                width: min(19rem, calc(100vw - 6rem));
+                padding: 1.25rem;
+                border-radius: 0.5rem;
+                background: #fff;
+                color: #18181b;
+                box-shadow: 0 4px 18px rgb(0 0 0 / 28%);
+                opacity: 0;
+                pointer-events: none;
+                transform: translate(0.4rem, -50%);
+                transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+                visibility: hidden;
+            }
+
+            .project-gallery__tools-popover::after {
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                width: 0;
+                height: 0;
+                border: 0.55rem solid transparent;
+                border-left-color: #fff;
+                content: "";
+                transform: translateY(-50%);
+            }
+
+            .project-gallery__tools:hover .project-gallery__tools-popover,
+            .project-gallery__tools:focus-within .project-gallery__tools-popover,
+            .project-gallery--tools-open .project-gallery__tools-popover {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translate(0, -50%);
+                visibility: visible;
+            }
+
+            .project-gallery__tools-popover > p {
+                margin: 0 0 0.85rem;
+                color: #737373;
+                font-family: inherit;
+                font-size: 0.65rem;
+                font-weight: 700;
+                letter-spacing: 0.04em;
+            }
+
+            .project-gallery__tools-popover ul {
+                display: grid;
+                gap: 0.8rem;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .project-gallery__tools-popover li {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                font-size: 0.95rem;
+                font-weight: 600;
+            }
+
+            .project-gallery__tool-icon {
+                width: 2rem;
+                height: 2rem;
+                flex: none;
+            }
+
+            @media (max-width: 600px) {
+                .project-gallery__tools {
+                    top: auto;
+                    right: 1rem;
+                    bottom: 1.25rem;
+                    transform: none;
+                }
+
+                .project-gallery__tools-popover {
+                    top: auto;
+                    right: calc(100% + 0.75rem);
+                    bottom: 0;
+                    transform: translateX(0.4rem);
+                }
+
+                .project-gallery__tools:hover .project-gallery__tools-popover,
+                .project-gallery__tools:focus-within .project-gallery__tools-popover,
+                .project-gallery--tools-open .project-gallery__tools-popover {
+                    transform: translateX(0);
+                }
+
+                .project-gallery__tools-popover::after {
+                    top: auto;
+                    bottom: 1.4rem;
+                    transform: none;
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .project-gallery__tools-popover {
+                    transition: none;
+                }
+            }
+</style>

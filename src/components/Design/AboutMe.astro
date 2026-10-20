@@ -3,6 +3,8 @@ import IllustratorIcon from "../../components/icons/illustrator.astro";
 import FigmaIcon from "../../components/icons/figma.astro";
 import AffinityDesignIcon from "../../components/icons/affinitydesign.astro";
 import CanvaIcon from "../../components/icons/canva.astro";
+import WordpressIcon from "../../components/icons/wordpress.astro";
+import ElementorIcon from "../../components/icons/elementor.astro";
 
 const personalImageAlt = "Anabel";
 const avatarUrl = import.meta.env.PUBLIC_AVATAR_URL || "/perfil.jpg";
@@ -29,8 +31,8 @@ const avatarUrl = import.meta.env.PUBLIC_AVATAR_URL || "/perfil.jpg";
         </div>
       </article>
 
-      <div class="min-h-[195px] rounded-2xl bg-blue-200 md:col-span-5">
-
+      <div class="h-[195px] rounded-2xl bg-blue-200 md:col-span-5">
+        <img src={avatarUrl} alt={personalImageAlt} class="w-full h-full object-cover rounded-2xl" />
       </div>
 
       <div class="flex justify-center items-center rounded-2xl min-h-[195px] bg-slate-950 md:col-span-5">
@@ -45,6 +47,8 @@ const avatarUrl = import.meta.env.PUBLIC_AVATAR_URL || "/perfil.jpg";
               <IllustratorIcon class="size-10" />
               <AffinityDesignIcon class="size-10" />
               <CanvaIcon class="size-10" />
+              <WordpressIcon class="size-10" />
+              <ElementorIcon class="size-10" />
           </div>
       </article>
 

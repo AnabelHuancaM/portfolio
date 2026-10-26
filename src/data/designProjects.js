@@ -12,18 +12,21 @@ export const graphicProjects = [
     ],
     tools: ["Figma", "Illustrator", "AffinityDesigner"],
   },
-  // {
-  //   id: "greco",
-  //   title: "Greco Snack",
-  //   description: "Diseño de identidad visual para una marca.",
-  //   image: "/projects/MyTravel/cover.webp",
-  //   category: "Branding",
-  //   gallery: [
-  //     "/projects/MyTravel/cover.webp",
-  //     "/projects/MyTravel/02-diagrama.webp",
-  //   ],
-  //   tools: ["Illustrator", "Designer"],
-  // },
+  {
+    id: "greco",
+    title: "Greco Snack",
+    description: "Rediseño de identidad visual para una marca.",
+    image: "/projects/GrecoSnack/cover.webp",
+    category: "Branding",
+    gallery: [
+      "/projects/GrecoSnack/cover.webp",
+      "/projects/GrecoSnack/01.webp",
+      "/projects/GrecoSnack/02.webp",
+      "/projects/GrecoSnack/03.webp",
+      "/projects/GrecoSnack/04.webp",
+    ],
+    tools: ["Illustrator", "Designer"],
+  },
   // {
   //   id: "Lynx",
   //   title: "Lynx Seguros",

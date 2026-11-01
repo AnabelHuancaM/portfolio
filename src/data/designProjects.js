@@ -2,7 +2,7 @@ export const graphicProjects = [
   {
     id: "auracafe",
     title: "AuraCafe",
-    description: "Diseño de landing page para una marca.",
+    description: "Diseño de identidad visual digital y una experiencia web para una cafetería.",
     image: "/projects/auraCafe.webp",
     category: "Diseño Web",
     gallery: [

@@ -99,6 +99,7 @@ import IllustratorIcon from "../icons/illustrator.astro";
             }
 
             dialog.showModal();
+            document.documentElement.classList.add("project-gallery-open");
         });
     });
 
@@ -112,12 +113,21 @@ import IllustratorIcon from "../icons/illustrator.astro";
                 });
 
                 dialog.addEventListener("click", (event) => {
-                    if (event.target === dialog) {
+                    if (!(event.target instanceof Element)) {
+                        return;
+                    }
+
+                    const clickedContent = event.target.closest(
+                        "img, .project-gallery__images h2, .project-gallery__category, .project-gallery__description, .project-gallery__tools",
+                    );
+
+                    if (!clickedContent) {
                         dialog.close();
                     }
                 });
 
                 dialog.addEventListener("close", () => {
+                    document.documentElement.classList.remove("project-gallery-open");
                     toolsButton?.setAttribute("aria-expanded", "false");
                     dialog.classList.remove("project-gallery--tools-open");
                 });

@@ -229,7 +229,9 @@ p {
 }
 
 .about-bg {
-    background-color: var(--light-celeste)
+    background-color: var(--light-celeste);
+    min-width: 100%;
+    position: absolute;
 }
 
 @layer components {

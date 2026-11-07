@@ -8,8 +8,36 @@ import ElementorIcon from "../../components/icons/elementor.astro";
 
 const personalImageAlt = "Anabel";
 const avatarUrl = import.meta.env.PUBLIC_AVATAR_URL || "/perfil.jpg";
+
+const albums = [
+  {
+    id: 1,
+    title: "Living Things",
+    artist: "Linkin Park",
+    image: "/public/albums/living-things.jpg"
+  }, 
+  {
+    id: 2,
+    title: "Spirit",
+    artist: "Bring Me The Horizon",
+    image: "/public/albums/spirit.jpg"
+  },
+  {
+    id: 3,
+    title: "Post Human",
+    artist: "Bring Me The Horizon",
+    image: "/public/albums/post-human.jpg"
+  },
+  {
+    id: 4,
+    title: "Meteora",
+    artist: "Linkin Park",
+    image: "/public/albums/lp.jpg"
+  }
+]
+
 ---
-    <!-- Grid principal -->
+  <!-- Grid principal -->
   <div class="grid grid-cols-1 gap-5 md:grid-cols-12">
       <article class="flex min-h-[420px] flex-col justify-between
                rounded-2xl bg-white p-6 md:col-span-7 md:row-span-2">
@@ -43,7 +71,7 @@ const avatarUrl = import.meta.env.PUBLIC_AVATAR_URL || "/perfil.jpg";
       </div>
 
       <!-- Herramientas -->
-      <article class="min-h-[214px] rounded-2xl bg-white/60 p-6 md:col-span-6">
+      <article class="min-h-[214px] rounded-2xl bg-sky-600  p-6 md:col-span-6">
         <h3 class="mb-5 font-semibold primary-color"> HERRAMIENTAS </h3>
           <div class="flex flex-wrap gap-4 my-5">
               <FigmaIcon class="size-10" />
@@ -56,5 +84,10 @@ const avatarUrl = import.meta.env.PUBLIC_AVATAR_URL || "/perfil.jpg";
       </article>
 
       <!-- Tarjeta inferior derecha -->
-      <div class="min-h-[214px] rounded-2xl bg-sky-700 md:col-span-6"></div>
+        <div class="min-h-[214px] flex justify-center flex-wrap gap-2 items-center bg-white/60 rounded-2xl md:col-span-6">
+          {albums.map((albums) => (
+            <img src={albums.image} alt={albums.title} class="xl:w-1/5 w-24 object-cover rounded-2xl" />
+          ))}
+        </div>
+      </div>
   </div>

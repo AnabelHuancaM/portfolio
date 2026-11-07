@@ -60,7 +60,7 @@ export const graphicProjects = [
       "/projects/MyTravel/06-vistazo.webp",
     ],
     tools: ["Figma", "Illustrator"],
-  }
+  },
   // {
   //   id: "sisyphus",
   //   title: "Sisyphus",

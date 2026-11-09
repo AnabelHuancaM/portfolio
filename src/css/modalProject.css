@@ -242,9 +242,16 @@ html.project-gallery-open body {
             }
 
             .project-gallery__tool-icon {
+                display: block;
                 width: 2rem;
                 height: 2rem;
                 flex: none;
+            }
+
+            .project-gallery__tool-icon svg {
+                display: block;
+                width: 100%;
+                height: 100%;
             }
 
             @media (max-width: 600px) {

@@ -2,14 +2,24 @@
 import { graphicProjects } from "../../data/designProjects.js";
 import FigmaIcon from "../icons/figma.astro";
 import IllustratorIcon from "../icons/illustrator.astro";
+import AffinityDesignerIcon from "../icons/affinitydesign.astro";
+import PhotoshopIcon from "../icons/photoshop.astro";
 
+
+const toolIcons = {
+    Figma: FigmaIcon,
+    Illustrator: IllustratorIcon,
+    AffinityDesigner: AffinityDesignerIcon,
+    Photoshop: PhotoshopIcon,
+};
 ---
-<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 py-8">
-    {graphicProjects.map(({ id, title, image }) => (
+<div id="design-projects" class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2 lg:grid-cols-3">
+    {graphicProjects.map(({ id, title, image, category }) => (
         <button
             type="button"
             class="group relative isolate flex min-h-[300px] w-full items-end overflow-hidden rounded-xl border border-white/10 p-5 text-left shadow-lg"
             data-gallery-open={id}
+            data-project-category={category}
             aria-haspopup="dialog"
             aria-controls={`gallery-${id}`}
         >
@@ -56,13 +66,20 @@ import IllustratorIcon from "../icons/illustrator.astro";
             <section class="project-gallery__tools-popover" id={`tools-${id}`} aria-label={`Herramientas utilizadas en ${title}`}>
                 <p>HERRAMIENTAS</p>
                 <ul>
-                    {tools.map((tool) => (
-                        <li>
-                            {tool === "Figma" && <FigmaIcon class="project-gallery__tool-icon" />}
-                            {tool === "Illustrator" && <IllustratorIcon class="project-gallery__tool-icon" />}
-                            <span>{tool}</span>
-                        </li>
-                    ))}
+                    {tools.map((tool) => {
+                        const ToolIcon = toolIcons[tool as keyof typeof toolIcons];
+
+                        return (
+                            <li>
+                                {ToolIcon && (
+                                    <span class="project-gallery__tool-icon" aria-hidden="true">
+                                        <ToolIcon />
+                                    </span>
+                                )}
+                                <span class="project-gallery__tool-name">{tool}</span>
+                            </li>
+                        );
+                    })}
                 </ul>
             </section>
         </aside>

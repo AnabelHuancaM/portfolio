@@ -24,30 +24,64 @@ export const TAGS = {
         name: "Social Media",
         class: "bg-[#e34f266e] text-white",
     },
+    ACADEMICO: {
+        name: "Académico",
+        class: "bg-[#e34f266e] text-white",
+    },
 };
 
 ---
 
-<div class="flex flex-nowrap overflow-x-auto gap-2 mb-5">
-    <a href="" class="shrink-0">
+<div class="mb-5 flex flex-nowrap gap-2 overflow-x-auto" role="group" aria-label="Filtrar proyectos por categoría">
+    <button
+        type="button"
+        class="shrink-0"
+        data-category-filter="all"
+        aria-pressed="true"
+    >
         <span class="badge-categories inline-block whitespace-nowrap active">Todos</span>
-    </a>
-    <a href="" class="shrink-0">
-        <span class="badge-categories inline-block whitespace-nowrap">{TAGS.BRANDING.name}</span>
-    </a>
-    <a href="" class="shrink-0">
-        <span class="badge-categories inline-block whitespace-nowrap">{TAGS.LOGOS.name}</span>
-    </a>
-    <a href="" class="shrink-0">
-        <span class="badge-categories inline-block whitespace-nowrap">{TAGS.DISEÑO_WEB.name}</span>
-    </a>
-    <a href="" class="shrink-0">
-        <span class="badge-categories inline-block whitespace-nowrap">{TAGS.DISEÑO_UI_UX.name}</span>
-    </a>
-    <a href="" class="shrink-0">
-        <span class="badge-categories inline-block whitespace-nowrap">{TAGS.ILUSTRACIÓN.name}</span>
-    </a>
-    <a href="" class="shrink-0">
-        <span class="badge-categories inline-block whitespace-nowrap">{TAGS.SOCIAL_MEDIA.name}</span>
-    </a>
+    </button>
+    {Object.values(TAGS).map(({ name }) => (
+        <button
+            type="button"
+            class="shrink-0"
+            data-category-filter={name}
+            aria-pressed="false"
+        >
+            <span class="badge-categories inline-block whitespace-nowrap">{name}</span>
+        </button>
+    ))}
 </div>
+
+<script>
+    const categoryFilters = document.querySelectorAll<HTMLButtonElement>("[data-category-filter]");
+    const projectCards = document.querySelectorAll<HTMLElement>("[data-project-category]");
+    const normalizeCategory = (category: string) =>
+        category.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+    categoryFilters.forEach((filter) => {
+        filter.addEventListener("click", () => {
+            const selectedCategory = filter.dataset.categoryFilter;
+
+            if (!selectedCategory) {
+                return;
+            }
+            const normalizedSelection = normalizeCategory(selectedCategory);
+
+            categoryFilters.forEach((button) => {
+                const isActive = button === filter;
+                button.setAttribute("aria-pressed", String(isActive));
+                button.querySelector(".badge-categories")?.classList.toggle("active", isActive);
+            });
+
+            projectCards.forEach((card) => {
+                const categories = card.dataset.projectCategory
+                    ?.split(",")
+                    .map(normalizeCategory) ?? [];
+
+                card.hidden = normalizedSelection !== "all" && !categories.includes(normalizedSelection);
+                card.style.display = card.hidden ? "none" : "";
+            });
+        });
+    });
+</script>

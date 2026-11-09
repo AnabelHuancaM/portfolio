@@ -31,7 +31,7 @@ export const graphicProjects = [
       "/projects/GrecoSnack/03.webp",
       "/projects/GrecoSnack/04.webp",
     ],
-    tools: ["Illustrator", "Designer"],
+    tools: ["Illustrator", "AffinityDesigner"],
   },
   // {
   //   id: "Lynx",
@@ -49,7 +49,7 @@ export const graphicProjects = [
     title: "myTravel",
     description: "Diseño de identidad visual para una marca.",
     image: "/projects/MyTravel/cover.webp",
-    category: "Diseño UI/UX",
+    category: ["Diseño UI/UX", "Diseño Web"],
     gallery: [
       "/projects/MyTravel/cover.webp",
       "/projects/MyTravel/01-antes.webp",
@@ -61,16 +61,29 @@ export const graphicProjects = [
     ],
     tools: ["Figma", "Illustrator"],
   },
-  // {
-  //   id: "sisyphus",
-  //   title: "Sisyphus",
-  //   description: "Diseño conceptual de una plataforma digital para cotizar seguros vehiculares, gestionar pólizas y reportar incidentes.",
-  //   image: "/projects/MyTravel/cover.webp",
-  //   category: "Diseño UI/UX",
-  //   gallery: [
-  //     "/projects/MyTravel/cover.webp",
-  //     "/projects/MyTravel/01-antes.webp",
-  //   ],
-  //   tools: ["Figma", "Designer"],
-  // }
+  /* {
+    id: "sisyphus",
+    title: "Sisyphus",
+    description: "Sistema de gestión para una librería de libros digitales, con un diseño de interfaz intuitivo y funcional.",
+    image: "/projects/Sisyphus/cover.webp",
+    category: "Diseño UI/UX",
+    gallery: [
+      "/projects/Sisyphus/cover.webp",
+      "/projects/Sisyphus/01.webp",
+    ],
+    tools: ["Figma", "Designer"],
+  }, */
+  {
+    id: "beauty",
+    title: "Beauty",
+    description: "Proyecto académico de un post carrusel de instagram para una marca de cosméticos, con un diseño visual atractivo y persuasivo.",
+    image: "/projects/Beauty/cover.webp",
+    category: ["Academico", "Social Media"],
+    gallery: [
+      "/projects/Beauty/cover.webp",
+      "/projects/Beauty/01.webp",
+      "/projects/Beauty/02.webp",
+    ],
+    tools: ["Photoshop"],
+  }
 ];
